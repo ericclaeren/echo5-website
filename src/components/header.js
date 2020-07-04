@@ -33,7 +33,6 @@ const LinkStyled = styled(Link)`
   place-self: stretch center;
 `;
 const LogoStyled = styled(Logo)`
-  /* max-height: 80px; */
   width: 100%;
   height: auto;
   max-height: 100%;
