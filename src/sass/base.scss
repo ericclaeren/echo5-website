@@ -1,0 +1,42 @@
+:root {
+  // Diagonal.
+  --diagonal-width: 100vw;
+  --diagonal-full-width: 100vw;
+
+  @media (min-width: 50em) {
+    --diagonal-width: 50rem;
+  }
+
+  --angle: -8deg;
+  /*-----------------
+    Magic Number Alert:
+    
+    the 0.07027 is calculated by this formula:
+    tan(8°) / 2
+    8° is the current skewY value.
+    ------------------*/
+  --magic-number: 0.07027;
+  --skew-padding: calc(var(--diagonal-width) * var(--magic-number));
+  --clip-padding: calc(var(--diagonal-full-width) * var(--magic-number));
+
+  // Breakpoints, see device.js
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+  --bp-desktop-large: 1440px;
+}
+
+html {
+  margin: 0;
+  min-height: 100%;
+
+  font-family: 'Hepta Slab', 'Times New Roman', Times, serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

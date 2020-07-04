@@ -1,0 +1,208 @@
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+img[width][height],
+svg[width][height] {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+
+  &:active,
+  &:hover {
+    outline-width: 0;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75em 1.25em;
+
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+
+  background-color: hsla(0, 0, 0, 0.8);
+
+  border-radius: 5px;
+  border-corner-shape: scoop;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin-top: 0;
+
+  text-align: left;
+}
+
+ul.arrow {
+  padding-left: 3em;
+
+  list-style: none;
+  li {
+    position: relative;
+    margin-bottom: 0.25em;
+    line-height: 1.4;
+
+    &::before {
+      position: absolute;
+      left: -1em;
+      transform: scale(1.5) translateX(-100%);
+      content: '⇢';
+    }
+  }
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted;
+}
+
+b,
+strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+dfn {
+  font-style: italic;
+}
+
+p {
+  margin: 0;
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
+}
+
+small {
+  margin-bottom: 1em;
+
+  font-style: italic;
+  line-height: 1.4;
+}
+
+h1 {
+  --font-size: 2rem;
+
+  margin-top: 0;
+  margin-bottom: 0.75em;
+
+  font-size: var(--font-size);
+  font-weight: 600;
+
+  .subtitle {
+    margin-top: 0.6em;
+
+    font-size: 0.85em;
+    font-weight: 400;
+
+    &.tippy {
+      line-height: 1.25;
+    }
+  }
+}
+
+.subtitle {
+  display: block;
+}
+
+@media screen and (min-width: var(--bp-tablet)) {
+  h1 {
+    --font-size: 2.25rem;
+    margin-bottom: 1em;
+
+    .subtitle {
+      margin-top: 0.45em;
+
+      &.tippy {
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+blockquote {
+  --font-size: 1.25rem;
+
+  margin: 0;
+  max-width: 600px;
+
+  font-size: var(--font-size);
+  font-weight: 400;
+  line-height: 1.35;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+  }
+
+  cite {
+    font-weight: 400;
+    font-size: 0.65em;
+
+    &:before {
+      display: inline-block;
+      content: '\2014';
+      margin-right: 0.25em;
+    }
+  }
+}
+
+figcaption {
+}
+
+q {
+  margin-bottom: 1em;
+}
+
+@media screen and (min-width: var(--bp-tablet)) {
+  blockquote {
+    --font-size: 2rem;
+  }
+}
+
+footer {
+  max-width: var(--diagonal-width);
+  margin: 0.5em auto;
+
+  text-align: right;
+}

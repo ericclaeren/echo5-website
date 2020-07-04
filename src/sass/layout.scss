@@ -1,0 +1,105 @@
+@import 'base';
+@import 'base-elements';
+
+.diagonal-box {
+  position: relative;
+  padding: var(--skew-padding) 0;
+  margin-top: -1px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewy(var(--angle));
+    transform-origin: 50% 50%;
+    outline: 1px solid transparent;
+    backface-visibility: hidden;
+    z-index: -1;
+  }
+}
+
+@media screen and (min-width: var(--bp-desktop)) {
+  .diagonal-box:first-of-type {
+    margin-top: -2em;
+  }
+}
+
+.diagonal-box--retrogreen::before {
+  background-image: linear-gradient(-188deg, #6dffda, #01e6ac);
+}
+
+.diagonal-box--dark {
+  color: #fff;
+
+  &::before {
+    background-image: linear-gradient(to bottom, #3b3b3b, #030505);
+  }
+}
+
+.diagonal-box--mint::before {
+  background-image: linear-gradient(to bottom, #bdf8df, #a2f5d2);
+}
+.diagonal-box--moss::before {
+  background-image: linear-gradient(to bottom, #67918f, #385452);
+}
+.diagonal-box--grey-white::before {
+  background-image: linear-gradient(to bottom, #f4f1ef, #eeeae7);
+}
+.diagonal-box--flamingo::before {
+  background-image: linear-gradient(to bottom, #f699a0, #f47f88);
+}
+.diagonal-box--avocado::before {
+  background-image: linear-gradient(to bottom, #d0ebdc, #b9e2cc);
+}
+.diagonal-box--blue::before {
+  background-image: linear-gradient(to bottom, #a2c5ce, #c3dbe1);
+}
+.diagonal-box--marigold {
+  &::before {
+    background-image: linear-gradient(to bottom, #fcf3d6, #fae9b1);
+  }
+
+  a {
+    color: #c35c67;
+  }
+}
+
+.diagonal-box__content {
+  --box-content-padding: 1em;
+
+  display: grid;
+  grid-auto-rows: auto;
+
+  max-width: var(--diagonal-width);
+  margin: 0.5em auto;
+  padding: var(--box-content-padding);
+  position: relative;
+
+  /* -----------
+  enable the border to see, that the content
+  perfectly fits into the section withou
+  bleeding into the adjecting areas:
+  ------------ */
+  // border: 2px dashed #fff8;
+
+  &.center {
+    // place-content: center center;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: var(--bp-tablet)) {
+  .diagonal-box__content {
+    --box-content-padding: 1.5em;
+  }
+}
+
+@media screen and (min-width: var(--bp-desktop)) {
+  .diagonal-box__content {
+    --box-content-padding: 2em;
+  }
+}
